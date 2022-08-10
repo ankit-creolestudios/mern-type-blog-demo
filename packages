@@ -1,0 +1,4 @@
+>npm install express mongoose dotenv cors morgan cookie-parser
+>npm install @types/express @types/mongoose @types/dotenv @types/morgan @types/cookie-parser
+>npm i -D typescript ts-node-dev @types/node
+>npx tsc --init
