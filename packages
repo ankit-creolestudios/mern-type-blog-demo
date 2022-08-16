@@ -1,4 +1,9 @@
->npm install express mongoose dotenv cors morgan cookie-parser
->npm install @types/express @types/mongoose @types/dotenv @types/morgan @types/cookie-parser
->npm i -D typescript ts-node-dev @types/node
->npx tsc --init
+> npm install express mongoose dotenv cors morgan cookie-parser
+> npm install @types/express @types/mongoose @types/dotenv @types/morgan @types/cookie-parser
+> npm i -D typescript ts-node-dev @types/node
+> npx tsc --init
+
+view site
+
+> npm i react-router-dom axios redux redux-thunk react-redux redux-devtools-extension bootstrap
+> pm i --save-dev @types/react-router-dom

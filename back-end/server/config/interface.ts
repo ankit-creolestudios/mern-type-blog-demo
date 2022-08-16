@@ -6,7 +6,7 @@ export interface IUser extends Document {
   avatar: string;
   role: string;
   type: string;
-  _doc: object;
+  _doc?: object;
 }
 export interface INewUser {
   name: string;

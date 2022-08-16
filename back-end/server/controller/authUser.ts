@@ -71,12 +71,13 @@ const authUser = {
       const user = await Users.findOne({ account });
       if (!user)
         return res.status(400).json({ message: "account does not exist" });
-      loginUser(account, password, res);
+      loginUser(user, password, res);
       // res.status(200).json({ message: "login success" });
     } catch (err) {}
   },
 };
 const loginUser = async (user: IUser, password: string, res: Response) => {
+  console.log(user);
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) return res.status(400).json({ message: "Password is wrong" });
   const access_token = generateAccessToken({ id: user._id });
