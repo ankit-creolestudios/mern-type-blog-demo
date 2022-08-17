@@ -7,3 +7,4 @@ view site
 
 > npm i react-router-dom axios redux redux-thunk react-redux redux-devtools-extension bootstrap
 > pm i --save-dev @types/react-router-dom
+

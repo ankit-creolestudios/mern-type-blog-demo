@@ -11,7 +11,7 @@ import sendEmail from "../config/sendMail";
 import { validateEmail, validatePhone } from "../middleware/validateRegister";
 import { sendSms } from "../config/sendSms";
 import { IToken, IUser } from "../config/interface";
-
+import nodefetch from "node-fetch";
 const CLIENT_URL = `${process.env.BASE_URL}`;
 const authUser = {
   register: async (req: Request, res: Response) => {
@@ -74,6 +74,20 @@ const authUser = {
       loginUser(user, password, res);
       // res.status(200).json({ message: "login success" });
     } catch (err) {}
+  },
+  facebookLogin: async (req: Request, res: Response) => {
+    try {
+      const { access_token, userId } = req.body;
+      const resUrl = `https://graph.facebook.com/v3.0/${userId}/?fields=id,name,email,picture&access_token=${access_token}`;
+      const result = await nodefetch(resUrl)
+        .then((res) => res.json())
+        .then((res) => {
+          return res;
+        });
+      console.log(result);
+    } catch (err: any) {
+      return res.status(500).json({ messag: err.message });
+    }
   },
 };
 const loginUser = async (user: IUser, password: string, res: Response) => {
